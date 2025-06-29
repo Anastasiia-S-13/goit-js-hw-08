@@ -30,14 +30,12 @@ ul {
 
 .gallery-item {
   overflow: hidden;
-}
-
-.gallery-link:hover .gallery-image {
-  transform: scale(1.05);
-}
-
-.gallery-image {
+  z-index: 999;
   transition: transform 250ms ease-in-out;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
 }
 
 .modal img {
