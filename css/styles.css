@@ -28,9 +28,16 @@ ul {
   cursor: pointer;
 }
 
-.gallery-item:hover image {
-  width: 376px;
-  height: 208px;
+.gallery-item {
+  overflow: hidden;
+}
+
+.gallery-link:hover .gallery-image {
+  transform: scale(1.05);
+}
+
+.gallery-image {
+  transition: transform 250ms ease-in-out;
 }
 
 .modal img {
