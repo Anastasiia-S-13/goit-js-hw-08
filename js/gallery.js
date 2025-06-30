@@ -72,15 +72,14 @@ function bigImage(event) {
     event.preventDefault();
 
     const clickedImage = event.target;
-    const link = clickedImage.closest("a");
 
-    if (!link) {
+    if (clickedImage === event.currentTarget) {
         return;
     }
 
     const instance = basicLightbox.create(`
         <div class="modal">
-            <img src="${link.href}" alt="${event.target.alt}" width="1112"/>
+            <img src="${event.target.dataset.source}" alt="${event.target.alt}" width="1112"/>
         </div>
     `)
 
@@ -94,7 +93,7 @@ function createMarkUp(arr) {
                 <img
                 class="gallery-image"
                 src="${item.preview}"
-                data-source="large-image.jpg"
+                data-source="${item.original}"
                 alt="${item.description}"
                 width="360"
                 />
