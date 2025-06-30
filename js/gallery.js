@@ -73,7 +73,7 @@ function bigImage(event) {
 
     const clickedImage = event.target;
 
-    if (clickedImage === event.currentTarget) {
+    if (event.target.nodeName !== "IMG") {
         return;
     }
 
